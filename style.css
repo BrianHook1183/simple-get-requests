@@ -5,4 +5,23 @@ section {
   border: black solid 2px;
   margin-bottom: 20px;
   min-height: 300px;
+  padding: 0px 8px;
+}
+
+.prompt {
+  font-style: italic;
+  font-size: 14px;
+  color: grey;
+}
+
+.answer {
+  margin-top: 15px;
+}
+
+.picture-collage {
+flex: 1;
+}
+
+.collage-img {
+  max-height: 200px;
 }

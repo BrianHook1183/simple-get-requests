@@ -17,18 +17,45 @@
 			<section>
         <h2>#1</h2>
         <div class="prompt"><strong>Prompt:</strong>  Create an app that lets users choose to display between 1 and 50 random dog images, then prints the results to the console. The app should feature a form with a required input where users indicate the number of images to retrieve, and the input should default to 3. Use the endpoint described in the "DISPLAY MULTIPLE RANDOM IMAGES FROM ALL DOGS COLLECTION" section of <a href="https://dog.ceo/dog-api/documentation/random">this page of the DogAPI docs</a>.</div>
+        <div class="answer">
+          <p>(this only prints to console, as intended)</p>
+          <form id="prompt1">
+            <label>Number of Dogs:
+              <input type="text" name="numberOfDogs" value="3" required>
+            </label>
+            <input type="submit" value="Submit">
+          </form>
+        </div>
       </section>
       <section>
         <h2>#2</h2>
         <div class="prompt"><strong>Prompt:</strong>  Building on the previous app, create an app that lets users choose to display between 1 and 50 random dog images, then loads the images in the DOM. This app should adhere to all of the requirements from the first one, in addition to displaying the images in the DOM.</div>
+        <div class="answer">
+          <p>(this outputs picture collage in DOM)</p>
+          <form id="prompt2">
+            <label>Number of Dogs (1-50):
+              <input type="text" name="numberOfDogs2" value="3" required>
+            </label>
+            <input type="submit" value="Submit">
+          </form>
+          <div class="picture-collage"></div>
+        </div>
       </section>
       <section>
         <h2>#3</h2>
         <div class="prompt"><strong>Prompt:</strong>  Create an app that loads a single random image for a specific breed, based on a user input. This app should account for the happy case when the breed is found, as well as the unhappy case when it is not. Use the endpoint described in the "RANDOM IMAGE FROM A BREED COLLECTION" section of <a href="https://dog.ceo/dog-api/documentation/breed">this page of the DogAPI docs</a>. Note that the API will return an HTTP status code of 404 along with a JSON object with info about the error if a request is made for a breed that can't be found.</div>
+        <div class="answer">
+
+        </div>
 			</section>
 		</main>
 		<footer>
 			<p>Copyright Brian Hook 2020</p>
-		</footer>
+    </footer>
+    <script
+    src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous"></script>
+    <script src="main.js"></script>
 	</body>
 </html>
