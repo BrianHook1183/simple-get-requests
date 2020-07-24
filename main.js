@@ -57,36 +57,28 @@ function displayResults2(responseJson) {
 
 // -----------------------For assignment #3 -----------------------------------------
 
-
 function watchForm3() {
   $('#prompt3').submit(event => {
     event.preventDefault();
     userBreed = $("input[name=breedOfDog]").val();
-    console.log(userBreed);
-    clearCollage();
-    getDogImage3(userBreed);
+    console.log('the user submitted: ' + userBreed);
+    const breedEndpoint = `https://dog.ceo/api/breed/${userBreed}/images/random`;
+    console.log('endPoint is: ' + breedEndpoint);
+    getDogImage3(breedEndpoint);
   });
 }
 
-function clearCollage() {
-  $('.portrait').html('');
-}
-
-function getDogImage3(userBreed) {
-  console.log(userBreed);
-  fetch(`https://dog.ceo/api/breed/${userBreed}/images/random/`)
+function getDogImage3(breedEndpoint) {
+  fetch(breedEndpoint)
   .then(response => response.json())
-  .then(responseJson => displayResults2(responseJson))
+  .then(responseJson => displayResults3(responseJson))
   .catch(error => alert('Something went wrong. Try again later.'));
 }
 
-function displayResults2(responseJson) {
-  //replace the existing image with the new one
-  responseJson.message.forEach(image => {
-  $('.portrait').append(`
-  <img src="${image}" class="collage-img">
+function displayResults3(responseJson) {
+  $('.portrait').html(`
+  <img src="${responseJson.message}" class="portrait-img">
   `);
-  })
 }
 
 // -----------------------For assignment #3 -----------------------------------------
@@ -95,7 +87,6 @@ function displayResults2(responseJson) {
 
 // -----------------------For all assignments -----------------------------------------
 $(function() {
-  console.log('App loaded! Waiting for submit!');
   watchForm();
   watchForm2();
   watchForm3();
