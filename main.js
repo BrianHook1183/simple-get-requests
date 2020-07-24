@@ -60,7 +60,7 @@ function displayResults2(responseJson) {
 function watchForm3() {
   $('#prompt3').submit(event => {
     event.preventDefault();
-    userBreed = $("input[name=breedOfDog]").val();
+    userBreed = $("input[name=breedOfDog]").val().toLowerCase();
     console.log('the user submitted: ' + userBreed);
     const breedEndpoint = `https://dog.ceo/api/breed/${userBreed}/images/random`;
     console.log('endPoint is: ' + breedEndpoint);
@@ -76,9 +76,15 @@ function getDogImage3(breedEndpoint) {
 }
 
 function displayResults3(responseJson) {
+  if (responseJson.status === 'error') {
+    $('.portrait').html(`
+    <p>${responseJson.message}</p>
+    `);
+  } else {
   $('.portrait').html(`
   <img src="${responseJson.message}" class="portrait-img">
   `);
+  }
 }
 
 // -----------------------For assignment #3 -----------------------------------------
