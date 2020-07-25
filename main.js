@@ -48,6 +48,7 @@ function displayResults2(responseJson) {
   $('.picture-collage').append(`
   <img src="${image}" class="collage-img">
   `);
+  $('.picture-collage').removeClass('hidden');
   })
 }
 // -----------------------For assignment #2 -----------------------------------------
@@ -85,6 +86,7 @@ function displayResults3(responseJson) {
   <img src="${responseJson.message}" class="portrait-img">
   `);
   }
+  $('.portrait').removeClass('hidden');
 }
 
 // -----------------------For assignment #3 -----------------------------------------
