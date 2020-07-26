@@ -78,6 +78,7 @@ function getDogImage3(breedEndpoint) {
 
 function displayResults3(responseJson) {
   if (responseJson.status === 'error') {
+    console.log(responseJson);
     $('.portrait').html(`
     <p>${responseJson.message}</p>
     `);
